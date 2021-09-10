@@ -1,0 +1,48 @@
+<div class="container-fluid">
+
+  <div class="row" style="text-align: center; margin-top: 100px">
+
+    <div class="col-lg-2 col-md-12">
+
+      <div *ngIf="mode < 4">{{this.writing}} <hr> </div>
+
+      <div *ngIf="mode == 5" style="font-size: 17px; font-weight: bold">
+        {{winner}} Won!
+
+        <hr>
+
+        <button (click)="goToLobby()">Go to lobby</button>
+      </div>
+
+      <div *ngIf="mode == 4">
+        Turn: {{turn}}
+
+        <hr>
+      </div>
+
+      <div *ngIf="mode == 0">
+        <button (click)="start()">Start</button>
+      </div>
+
+      <div *ngIf="mode == 2">
+        <button (click)="ready()">Ready</button>
+      </div>
+
+    </div>
+
+    <div class="col-lg-5 col-md-12">
+      <div>{{nickname}} <div *ngIf="iAmReady && mode < 4">(ready)</div></div>
+      <canvas id="myCanvas" width="400" height="400"></canvas>
+    </div>
+
+    <div class="col-lg-5 col-md-12">
+<!--      <canvas id="enemyCanvas" width="400" height="400" style="border: 1px solid black"></canvas>-->
+      <div>{{enemy}} <div *ngIf="enemyReady  && mode < 4">(ready)</div></div>
+      <app-enemy-field></app-enemy-field>
+    </div>
+
+  </div>
+
+</div>
+
+

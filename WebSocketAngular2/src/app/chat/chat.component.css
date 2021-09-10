@@ -1,0 +1,19 @@
+.chat {
+  margin-top: 10rem;
+}
+div.chat-content {
+  border-radius: .25rem;
+  height: 40rem;
+  margin-bottom: 2rem;
+  overflow: auto;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+div.chat-content::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+.card {
+  height: 100%;
+}

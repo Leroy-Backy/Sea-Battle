@@ -1,0 +1,36 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-9">
+      <form (ngSubmit)="setNickname(form)" #form="ngForm">
+        <input type="text" name="nickname" ngModel>
+        <button type="submit" class="btn btn-primary">Select</button>
+      </form>
+    </div>
+
+    <div class="col-3" style="float: right">
+      <a routerLink="/chat">Go to Chat</a>
+    </div>
+  </div>
+
+
+
+<hr>
+<div style="margin-top: 10px">
+  <button class="btn btn-primary" (click)="createGame()">
+    Create game
+  </button>
+</div>
+
+
+<div *ngFor="let message of seaBattleMessages">
+  <div class="card" style="margin-top: 10px; padding: 5px">
+    <div style="font-size: 16px; font-weight: bold">{{message.player1}}</div>
+    <div>
+      <button class="btn btn-primary" (click)="connectToGame(message.player1)">
+        Connect to game
+      </button>
+    </div>
+  </div>
+</div>
+</div>
